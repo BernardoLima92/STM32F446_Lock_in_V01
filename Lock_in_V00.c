@@ -497,7 +497,7 @@ for (i = 0; i < (Periodos*Ns); i++){
 
 // Cálculo do Módulo e da Fase do Primeiro Harmônico
 modulo = pow( (pow(fase1h,2) + pow(quad1h, 2)) , 0.5);
-angulo = (atan(-fase1h/quad1h))*180/3.14159265358979;		// Retorna o Valor do ângulo em graus
+angulo = (atan(quad1h/fase1h))*180/3.14159265358979;		// Retorna o Valor do ângulo em graus
 
 sprintf(dados, "%08f\r\n", modulo);
 HAL_UART_Transmit(&huart2, dados , 11, 200);
