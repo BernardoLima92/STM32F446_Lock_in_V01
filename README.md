@@ -44,11 +44,11 @@ But for lock-in processing, in addition to generating the reference signal (Vr),
 The Figure below illustrates how this operation is done so that the Vs and Vr signals are synchronized:
 ![Time_Diagram_LOCK_iN - Copia](https://user-images.githubusercontent.com/114233216/228126642-294dc2ca-91f8-4ce7-97cb-6b75fbf4af20.png)
 
-TIMER 8 counts from 0 to ARR. Two triggers are configured:
+The TIMER 8 counts from 0 to ARR. Two triggers are configured:
 - When the timer passes 1000, an analog reading is taken and its result is stored in a vector.
 - When the timer reaches the value of ARR (Overflow), the DAC value is updated with the next LUT value.
 
-This whole process is performed by the chip's DMA, in order to leave the microcontroller free for the other necessary operations. This is done repeatedly.
+This whole process is performed by the chip's DMA, in order to leave the microcontroller free for the other necessary operations. This is done repeatedly. This ensures that the signals Vs and Vr are synchronized, i.e. have a fixed phase difference during the whole process.
 
 Here at this point there is an important practical aspect that should be commented on. It is necessary to determine when complete periods of the analog signal will be read. This total number of periods is related to the integration time of the professional lock-in, and is directly related to the quality of the signal to be processed.
 In this work, a vector with 1280 positions was created to store the values read from the analog port. That is, 100 complete periods of the Vs signal will be read.
