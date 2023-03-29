@@ -8,6 +8,11 @@ The figure below illustrates the basic operation of a lock-in amplifier.
 ![Lock-in Processing img](https://user-images.githubusercontent.com/114233216/228120262-0e5bbd8e-1b59-4e33-bd7d-913f8ae0ed24.png)
 
 In summary, the signals Vs and Vr are multiplied in phase and in quadrature (i.e. with Vr shifted by 90°), are filtered, and finally undergo vector multiplication. 
+But, Where do these Vs and Vr signals come from?
+
+
+
+
 The entire mathematical operation is described in detail in this file:
 [Lock-in Processing.pdf](https://github.com/BernardoLima92/STM32F446_Lock_in_V01/files/11084935/Lock-in.Processing.pdf).
 
