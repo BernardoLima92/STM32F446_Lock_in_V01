@@ -9,7 +9,8 @@ Its purpose is to recover small or weak signals that would otherwise be lost in 
 
 When a measurement is being taken and the signal amplitude is large enough to be detected by a multimeter or oscilloscope, it is not necessary to use a lock-in amplifier. In these cases, simply use a multimeter and the problem is solved. On the other hand, when dealing with small signals, whose noise may be greater than the signal itself, or when great precision is desired, the lock-in amplifier is the right instrument for this measurement.
 
-But, what does the lock-in amplifier do exactly?
+***But, what does the lock-in amplifier do exactly?***
+
 There is a whole theory very well founded in the books M.L Meade and Gerrad Klos about the operation of the lock-in amplifier. The objective here is not to bring the theory in a raw form. In this tutorial I will try to explain in a simpler and more didactic way the operation of the lock-in amplifier.
 
 The figure below illustrates a situation where a measuring of a small voltage is being done.
