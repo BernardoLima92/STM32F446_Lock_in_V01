@@ -11,20 +11,24 @@ When a measurement is being taken and the signal amplitude is large enough to be
 
 ***But, what does the lock-in amplifier do exactly?***
 
-There is a whole theory very well founded in the books M.L Meade and Gerrad Klos about the operation of the lock-in amplifier. The objective here is not to bring the theory in a raw form. In this tutorial I will try to explain in a simpler and more didactic way the operation of the lock-in amplifier.
-
-The figure below illustrates a situation where a measuring of a small voltage is being done.
-
-
-
-
 The figure below illustrates the basic operation of a lock-in amplifier.
 ![Lock-in Processing img](https://user-images.githubusercontent.com/114233216/228120262-0e5bbd8e-1b59-4e33-bd7d-913f8ae0ed24.png)
 
 In summary, the signals Vs and Vr are multiplied in phase and in quadrature (i.e. with Vr shifted by 90°), are filtered, and finally undergo vector multiplication. 
-But, Where do these Vs and Vr signals come from?
+But, Where do these Vs and Vr signals come from? The figure below explain these signals:
 
 
+
+Weel, th most part of describe above was based in the very well founded theory founded in the books M.L Meade and Gerrad Klos about the operation of the lock-in amplifier. The objective here is not to bring the theory in a raw form. In this tutorial I will try to explain in a simpler and more didactic way the operation of the lock-in amplifier.
+
+When we are in graduation and start to work with arduino or other microcontrollers, one of the activities carried out is the temperature measurement with ICs like the LM35. In this case, the microcontroller's ADC is used to read an analog signal that is proportional (or nearly proportional) to the ambient temperature.
+So, the excited student creates a program to measure the temperature and print the value on an LCD display. In many situations what happens is that the temperature value varies slightly. For example, sometimes it shows 26°C/27°C, and it varies between these two values, which are very close. This can happen for several reasons: the value is close to the resolution limit, noise, poor contact (there are several possible reasons). But the student doesn't want to know the reason, he just wants to solve the problem and make the temperature stop varying, stay stable. And then the student has the idea that solves the problem: take an average of 100 readings and use the average value as the correct temperature value.
+The student realizes that taking an arithmetic average of n readings solves the problem.
+
+One way to understand the lock-in amplifier is to know that it does
+exactly the same thing: it does an average. However, not simply an average equal to what was done by the student, because in lock-in, the signal is alternating and periodic. Lock-in uses (usually) a sinusoidal signal called the reference signal r(t) to modulate the experiment, making the signal you want to measure, which was purely DC, now have an AC component. The average is made with a simple integration process, and the value obtained is the DC value that would initially have if the signal were not modulated, however, free of noise.
+
+Instead of averaging DC readings, the lock-in averages AC readings. This simple change is the differential that makes the noise to be eliminated. This is because at low frequencies there is a strong influence of noise called 1/f. As frequency increases, noise intensity decreases.
 
 
 The entire mathematical operation is described in detail in this file:
