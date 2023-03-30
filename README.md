@@ -2,7 +2,12 @@
 Implementation of a digital lock-in amplifier using a STM32F446RE Nucleo Board
 
 This Tutorial describes the steps of develop of a digital lock-in amplifier.
-Firstly, i´am going to care with the processing of the signal (Version 01). After, in a second moment, i am going to improve the quality of the signal using stages of pre-amplifier and filters.
+
+## **Theory Of Operation**
+The lock-in amplifier is an instrument based on the principle called synchronous detection.
+Its purpose is to recover small or weak signals that would otherwise be lost in noise. This device serves to detect the amplitude of a signal s(t) that is overlaid by noise. The instrument can be considered as a highly selective amplifier that operates as a bandpass filter, whose center frequency is determined by the reference signal r(t). The lock-in amplifier serves to extract the signal from noise.
+
+
 
 The figure below illustrates the basic operation of a lock-in amplifier.
 ![Lock-in Processing img](https://user-images.githubusercontent.com/114233216/228120262-0e5bbd8e-1b59-4e33-bd7d-913f8ae0ed24.png)
