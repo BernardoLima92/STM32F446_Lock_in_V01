@@ -7,6 +7,12 @@ This Tutorial describes the steps of develop of a digital lock-in amplifier.
 The lock-in amplifier is an instrument based on the principle called synchronous detection.
 Its purpose is to recover small or weak signals that would otherwise be lost in noise. This device serves to detect the amplitude of a signal s(t) that is overlaid by noise. The instrument can be considered as a highly selective amplifier that operates as a bandpass filter, whose center frequency is determined by the reference signal r(t). The lock-in amplifier serves to extract the signal from noise.
 
+When a measurement is being taken and the signal amplitude is large enough to be detected by a multimeter or oscilloscope, it is not necessary to use a lock-in amplifier. In these cases, simply use a multimeter and the problem is solved. On the other hand, when dealing with small signals, whose noise may be greater than the signal itself, or when great precision is desired, the lock-in amplifier is the right instrument for this measurement.
+
+But, what does the lock-in amplifier do exactly?
+
+
+
 
 
 The figure below illustrates the basic operation of a lock-in amplifier.
