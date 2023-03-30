@@ -50,6 +50,9 @@ Think about it, if the lock-in only averaged the sinusoidal signal read from the
 The idea of averaging the AC signal, not the DC signal, is because at low frequencies there is a strong influence of noise called 1/f. As the frequency increases, the intensity of the noise decreases. This is the foundation of the lock-in amplifier.
 
 
+## **Building the Lock-in With STM32**
+
+
 We can divide the construction of the lock-in amplifier into two major steps:
 - Step 1: Acquisition of the Vs and Vr signals.
 - Step 2: Multiplication, filtering, vector multiplication, printing the result.
