@@ -15,11 +15,20 @@ The figure below illustrates the basic operation of a lock-in amplifier.
 ![Lock-in Processing img](https://user-images.githubusercontent.com/114233216/228120262-0e5bbd8e-1b59-4e33-bd7d-913f8ae0ed24.png)
 
 In summary, the signals Vs and Vr are multiplied in phase and in quadrature (i.e. with Vr shifted by 90°), are filtered, and finally undergo vector multiplication. 
-But, Where do these Vs and Vr signals come from? The figure below explain these signals:
+
+- But, Where do these Vs and Vr signals come from? 
+- How does this make the measurement more accurate and eliminate noise? 
+
+The figure below explain these signals:
 
 ![Fig1](https://user-images.githubusercontent.com/114233216/228856030-cec655f7-6a26-45dd-9ce9-a01b09bf685f.png)
 
 The r(t) signal is a sinusoidal signal used to modulate an experiment. At the output of the experiment, the result is a signal s(t), also sinusoidal, but contaminated with the noise inherent to the environment. Thus, s(t) and r(t) have fundamentally the same frequency. In synchronous detection, when s(t) and r(t) are multiplied, the noise present in s(t) is also multiplied together, however, the synchronous detection process (multiplication + filtering) only sees the part of s(t) which has the same frequency as r(t), so that noise and unwanted components [components with other frequencies that may contaminate the signal s(t)] are eliminated.
+
+
+The entire mathematical operation of lock-in is described in detail in this file:
+[Lock-in Processing.pdf](https://github.com/BernardoLima92/STM32F446_Lock_in_V01/files/11084935/Lock-in.Processing.pdf).
+
 
 ***A more didactic way to understand Lock-in:***
 
@@ -40,9 +49,6 @@ Think about it, if the lock-in only averaged the sinusoidal signal read from the
 
 The idea of averaging the AC signal, not the DC signal, is because at low frequencies there is a strong influence of noise called 1/f. As the frequency increases, the intensity of the noise decreases. This is the foundation of the lock-in amplifier.
 
-
-The entire mathematical operation is described in detail in this file:
-[Lock-in Processing.pdf](https://github.com/BernardoLima92/STM32F446_Lock_in_V01/files/11084935/Lock-in.Processing.pdf).
 
 We can divide the construction of the lock-in amplifier into two major steps:
 - Step 1: Acquisition of the Vs and Vr signals.
