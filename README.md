@@ -23,7 +23,7 @@ The figure below explain these signals:
 
 ![Fig1](https://user-images.githubusercontent.com/114233216/228856030-cec655f7-6a26-45dd-9ce9-a01b09bf685f.png)
 
-The r(t) signal is a sinusoidal signal used to modulate an experiment. At the output of the experiment, the result is a signal s(t), also sinusoidal, but contaminated with the noise inherent to the environment. Thus, s(t) and r(t) have fundamentally the same frequency. In synchronous detection, when s(t) and r(t) are multiplied, the noise present in s(t) is also multiplied together, however, the synchronous detection process (multiplication + filtering) only sees the part of s(t) which has the same frequency as r(t), so that noise and unwanted components [components with other frequencies that may contaminate the signal s(t)] are eliminated.
+The signal to be measured is the signal s(t) obtained at the output of the experiment. The r(t) signal is a sinusoidal signal used to modulate an experiment. At the output of the experiment, the result is the interest signal s(t), also sinusoidal, but contaminated with the noise inherent to the environment. Thus, s(t) and r(t) have fundamentally the same frequency. In synchronous detection, when s(t) and r(t) are multiplied, the noise present in s(t) is also multiplied together, however, the synchronous detection process (multiplication + filtering) only sees the part of s(t) which has the same frequency as r(t), so that noise and unwanted components [components with other frequencies that may contaminate the signal s(t)] are eliminated. At the output of the synchronous detection block (OUT), the result is a value referring to the amplitude of s(t), but free of noise.
 
 
 The entire mathematical operation of lock-in is described in detail in this file:
