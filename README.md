@@ -17,6 +17,7 @@ The figure below illustrates the basic operation of a lock-in amplifier.
 In summary, the signals Vs and Vr are multiplied in phase and in quadrature (i.e. with Vr shifted by 90°), are filtered, and finally undergo vector multiplication. 
 But, Where do these Vs and Vr signals come from? The figure below explain these signals:
 
+![Fig1](https://user-images.githubusercontent.com/114233216/228856030-cec655f7-6a26-45dd-9ce9-a01b09bf685f.png)
 
 
 Wheel, the most part of describe above was based in the very well founded theory founded in the books M.L Meade and Gerrard Klos about the operation of the lock-in amplifier. The objective here is not to bring the theory in a raw form. In this tutorial I will try to explain in a simpler and more didactic way the operation of the lock-in amplifier.
@@ -28,7 +29,13 @@ The student realizes that taking an arithmetic average of n readings solves the 
 One way to understand the lock-in amplifier is to know that it does
 exactly the same thing: it does an average. However, not simply an average equal to what was done by the student, because in lock-in, the signal is alternating and periodic. Lock-in uses (usually) a sinusoidal signal called the reference signal r(t) to modulate the experiment, making the signal you want to measure, which was purely DC, now have an AC component. The average is made with a simple integration process, and the value obtained is the DC value that would initially have if the signal were not modulated, however, free of noise.
 
-Instead of averaging DC readings, the lock-in averages AC readings. This simple change is the differential that makes the noise to be eliminated. This is because at low frequencies there is a strong influence of noise called 1/f. As frequency increases, noise intensity decreases.
+Instead of averaging the DC readings, the lock-in averages the AC readings after synchronous detection. This simple change is the differential that causes the noise to be eliminated.
+
+What do you mean "CA read after synchronous detection"?
+
+Think about it, if the lock-in only averaged the sinusoidal signal read from the ADC port, nothing special would be done. Most of the noise that was contaminating the signal would also be present in the result of this AC average. Thus, the lock-in averages only those components that have the same frequency as the reference frequency used to modulate the signal. This causes unwanted components and noise to be eliminated. So it is correct to say that the lock-in also works as a highly selective band-pass filter.
+
+The idea of averaging the AC signal, not the DC signal, is because at low frequencies there is a strong influence of noise called 1/f. As the frequency increases, the intensity of the noise decreases. This is the foundation of the lock-in amplifier.
 
 
 The entire mathematical operation is described in detail in this file:
