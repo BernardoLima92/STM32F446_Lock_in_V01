@@ -19,6 +19,7 @@ But, Where do these Vs and Vr signals come from? The figure below explain these 
 
 ![Fig1](https://user-images.githubusercontent.com/114233216/228856030-cec655f7-6a26-45dd-9ce9-a01b09bf685f.png)
 
+The r(t) signal is a sinusoidal signal used to modulate an experiment. At the output of the experiment, the result is a signal s(t), also sinusoidal, but contaminated with the noise inherent to the environment. Thus, s(t) and r(t) have fundamentally the same frequency. In synchronous detection, when s(t) and r(t) are multiplied, the noise present in s(t) is also multiplied together, however, the synchronous detection process (multiplication + filtering) only sees the part of s(t) which has the same frequency as r(t), so that noise and unwanted components [components with other frequencies that may contaminate the signal s(t)] are eliminated.
 
 Wheel, the most part of describe above was based in the very well founded theory founded in the books M.L Meade and Gerrard Klos about the operation of the lock-in amplifier. The objective here is not to bring the theory in a raw form. In this tutorial I will try to explain in a simpler and more didactic way the operation of the lock-in amplifier.
 
