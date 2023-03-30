@@ -1,4 +1,4 @@
-# STM32F446_Lock_in_V01
+# STM32F446_Lock_in_Implementation
 Implementation of a digital lock-in amplifier using a STM32F446RE Nucleo Board
 
 This Tutorial describes the steps of develop of a digital lock-in amplifier.
