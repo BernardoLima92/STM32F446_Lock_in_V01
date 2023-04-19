@@ -116,6 +116,7 @@ The second for loop performs low-pass filtering. In fact, what is done is a simp
 The third and fourth loops do the same process, but the rd(t) signal is shifted by 90°.
 In the last line of this section the vector calculation is performed.
 
+
 ```
 // Second Harmonic Calculation in Phase
 for (i = 0; i < (Periodos*Ns); i++){
