@@ -77,7 +77,7 @@ By continuously putting into the DAC the values of the table LUT (P0, P1, P2, P3
 
 where ARR is the timer count limit value and Ns is the number of values in the LUT.
 
-In this work TIMER 8, DAC1, ADC0, DMA1 were used. For The sinusoidal signal generated in this work a LUT with 128 positions was created, the ARR value was set to 4678, and the operating frequency of the chip was set to 120M Hz. The result was a sinusoidal signal of 200.3 Hz.
+In this work TIMER 8, DAC1, ADC0, DMA1 were used. For The sinusoidal signal generated in this work a LUT with 128 positions was created, the ARR value was set to 4689, and the operating frequency of the chip was set to 120M Hz. The result was a sinusoidal signal of 199.89 Hz.
 
 But for lock-in processing, in addition to generating the reference signal (Vr), it is also necessary to acquire the signal of interest (Vs), and in a synchronized manner. So, what the micrcontroller-based lock-in does is repeatedly:
 - update the DAC value with the next LUT value;
@@ -87,7 +87,7 @@ The Figure below illustrates how this operation is done so that the Vs and Vr si
 ![Time_Diagram_LOCK_iN - Copia](https://user-images.githubusercontent.com/114233216/228126642-294dc2ca-91f8-4ce7-97cb-6b75fbf4af20.png)
 
 The TIMER 8 counts from 0 to ARR. Two triggers are configured:
-- When the timer passes 1000, an analog reading is taken and its result is stored in a vector.
+- When the timer passes 1500, an analog reading is taken and its result is stored in a vector.
 - When the timer reaches the value of ARR (Overflow), the DAC value is updated with the next LUT value.
 
 This whole process is performed by the chip's DMA, in order to leave the microcontroller free for the other necessary operations. This is done repeatedly. This ensures that the signals Vs and Vr are synchronized, i.e. have a fixed phase difference during the whole process.
