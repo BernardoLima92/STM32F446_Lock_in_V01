@@ -78,7 +78,9 @@ The generation of a sinuisodal signal that serves as reference is done using a t
 The figure below illustrates the basic application of this technique.
 ![DDS](https://user-images.githubusercontent.com/114233216/228123336-85b45063-5246-4f05-8874-0763f3bbaa47.png)
 By continuously putting into the DAC the values of the table LUT (P0, P1, P2, P3, P4...P9), what we will have at the output is a sinusoidal signal. The frequency of this signal depends on the speed at which the DAC value is updated. The formula shown in the figure below allows you to determine the frequency of the generated signal:
-![fórmula freq](https://user-images.githubusercontent.com/114233216/228124701-86719bdb-cea5-456b-adba-2666c9f49f28.png)
+
+![fórmula](https://user-images.githubusercontent.com/114233216/233111786-14b10610-ff40-491e-a723-a08018573247.png)
+
 
 where ARR is the timer count limit value and Ns is the number of values in the LUT.
 
@@ -89,7 +91,8 @@ But for lock-in processing, in addition to generating the reference signal (Vr),
 - Read the analog port;
 
 The Figure below illustrates how this operation is done so that the Vs and Vr signals are synchronized:
-![Time_Diagram_LOCK_iN - Copia](https://user-images.githubusercontent.com/114233216/228126642-294dc2ca-91f8-4ce7-97cb-6b75fbf4af20.png)
+![timediagram](https://user-images.githubusercontent.com/114233216/233112516-aa11e94c-c86f-48ac-9f24-dc1ffb43ad32.png)
+
 
 The TIMER 8 counts from 0 to ARR. Two triggers are configured:
 - When the timer passes 1500, an analog reading is taken and its result is stored in a vector.
@@ -142,3 +145,47 @@ for (i = 0; i < (Periodos*Ns); i++){
 mod2h[j] = pow( (pow(fase2h[j],2) + pow(quad2h[j], 2)) , 0.5);	// This is the M result	
 
 ```
+
+
+## **Prints of developed Software on STM32CubeIDE**
+
+1. PINOUT
+![Fig1 - PINOUT](https://user-images.githubusercontent.com/114233216/233118030-64949013-482a-4d8f-b180-eca9a746f4b6.png)
+
+
+2. CLOCK CONFIGURATION
+![Fig2 - CLOCK CONFIGURATION](https://user-images.githubusercontent.com/114233216/233118068-d49a0a5d-6d8a-4a8e-a257-46ddefa1b9a9.png)
+
+
+3. ADC1
+![Fig3 - ADC1](https://user-images.githubusercontent.com/114233216/233118108-03929909-1c38-4e64-b86f-8de144c18b13.png)
+
+
+4. ADC1 (Part of DMA)
+![Fig4 - ADC1 (dma)](https://user-images.githubusercontent.com/114233216/233118158-7876e620-8d0c-4a4f-aa97-6901093ab899.png)
+
+
+5. DAC
+![Fig5 - DAC](https://user-images.githubusercontent.com/114233216/233118191-ff53f195-2dd4-4f44-98d0-c8f490b57832.png)
+
+
+6. DAC (Part of DMA)
+![Fig6 - DAC (dma)](https://user-images.githubusercontent.com/114233216/233118212-98723b67-5272-40e7-84cc-0abc98967c73.png)
+
+
+7. TIMER8
+![Fig7 - TIM8](https://user-images.githubusercontent.com/114233216/233118246-5b56e15d-a20f-4559-988e-5e81ead305cd.png)
+
+
+8. TIMER8
+![Fig8 - TIM8](https://user-images.githubusercontent.com/114233216/233118294-9e5baf79-9103-4aa9-8df4-8c2102c8d48a.png)
+
+
+9. USART
+![FiG9 - USART](https://user-images.githubusercontent.com/114233216/233118318-957bf6eb-612d-453e-a0ff-864661c2a0ef.png)
+
+
+10. NVIC
+![Fig10 - NVIC](https://user-images.githubusercontent.com/114233216/233118343-21554783-98bd-4613-8c5b-ff14a9903819.png)
+
+
