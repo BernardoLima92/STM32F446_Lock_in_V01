@@ -100,7 +100,7 @@ After obtaining the 1280 values of Vs (which corresponds to 100 complete periods
 ## **STEP 2**
 Here what happens is basic mathematical operations, such as vector multiplication and arithmetic mean.
 
-´´´
+```
 // Cálculo segundo harmônico em Fase
 for (i = 0; i < (Periodos*Ns); i++){
 		resultado[i] = (AdcRead[i] * sin(arg2*i/Ns) );
@@ -124,4 +124,4 @@ for (i = 0; i < (Periodos*Ns); i++){
 // Cálculo primeiro módulo do Segundo Harmônico
 mod2h[j] = pow( (pow(fase2h[j],2) + pow(quad2h[j], 2)) , 0.5);
 
-´´´
+```
