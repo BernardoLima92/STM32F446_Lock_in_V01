@@ -117,27 +117,27 @@ The third and fourth loops do the same process, but the rd(t) signal is shifted 
 In the last line of this section the vector calculation is performed.
 
 ```
-// Cálculo segundo harmônico em Fase
+// Second Harmonic Calculation in Phase
 for (i = 0; i < (Periodos*Ns); i++){
 		resultado[i] = (AdcRead[i] * sin(arg2*i/Ns) );
 	}
 for (i = 0; i < (Periodos*Ns); i++){
 		soma = soma + resultado[i];
 	}
-	fase2h[j] =  soma/(Periodos*Ns);
+	fase2h[j] =  soma/(Periodos*Ns);			//This is the U1 result
 	soma = 0;
 
-// Cálculo segundo harmônico em Quadratura
+// Second Harmonic Calculation in Quadrature
 for (i = 0; i < (Periodos*Ns); i++){
 		resultado[i] = (AdcRead[i] * cos(arg2*i/Ns) );
 	}
 for (i = 0; i < (Periodos*Ns); i++){
 		soma = soma + resultado[i];
 	}
-	quad2h[j] =  soma/(Periodos*Ns);
+	quad2h[j] =  soma/(Periodos*Ns);			//This is the U2 result
 	soma = 0;
 
-// Cálculo primeiro módulo do Segundo Harmônico
-mod2h[j] = pow( (pow(fase2h[j],2) + pow(quad2h[j], 2)) , 0.5);
+// Calculation of the Second Harmonic modulus
+mod2h[j] = pow( (pow(fase2h[j],2) + pow(quad2h[j], 2)) , 0.5);	// This is the M result	
 
 ```
