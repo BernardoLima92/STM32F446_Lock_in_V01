@@ -26,13 +26,17 @@ The figure below explain these signals:
 The signal to be measured is the signal s(t) obtained at the output of the experiment. The r(t) signal is a sinusoidal signal used to modulate an experiment. At the output of the experiment, the result is the interest signal s(t), also sinusoidal, but contaminated with the noise inherent to the environment. Thus, s(t) and r(t) have fundamentally the same frequency. In synchronous detection, when s(t) and r(t) are multiplied, the noise present in s(t) is also multiplied together, however, the synchronous detection process (multiplication + filtering) only sees the part of s(t) which has the same frequency as r(t), so that noise and unwanted components [components with other frequencies that may contaminate the signal s(t)] are eliminated. At the output of the synchronous detection block (OUT), the result is a value referring to the amplitude of s(t), but free of noise.
 
 
+* *Harmonic Component Detection"?* *
+Digital lock-in amplifiers have the ability to detect harmonic components of the signal of interest. This is interesting in some types of experiments that have a quadratic behavior. In these cases, when modulating the experiment with a sinusoidal reference signal of frequency f, the signal at the output of the experiment will have a component with the same frequency f, in addition to components with 2f, 3f, 4f or more. WMS (Wavelength Modulation Spectroscopy) experiments have this type of behavior. In these experiments, it is interesting to detect the value of the second harmonic component at the output of the experiment. This is one of the reasons why lock-in is an obligatory instrument in these types of experiments.
+
+
 The entire mathematical operation of lock-in is described in detail in this file:
 [Lock-in Processing.pdf](https://github.com/BernardoLima92/STM32F446_Lock_in_V01/files/11084935/Lock-in.Processing.pdf).
 
 
 ***A more didactic way to understand Lock-in:***
 
-Wheel, the most part of describe above was based in the very well founded theory founded in the books M.L Meade and Gerrard Klos about the operation of the lock-in amplifier. The objective here is not to bring the theory in a raw form. In this tutorial I will try to explain in a simpler and more didactic way the operation of the lock-in amplifier.
+Wheel, the most part of describe above was based in the very well founded theory founded in the books from Meade (Lock-In Amplifiers: Principles and Applications) and Gerhard Kloos (Applications of Lock-in Amplifiers in Optics) about the operation/application of the lock-in amplifier. The objective here is not to bring the theory in a raw form. In this tutorial I will try to explain in a simpler and more didactic way the operation of the lock-in amplifier.
 
 When we are in graduation and start to work with arduino or other microcontrollers, one of the activities carried out is the temperature measurement with ICs like the LM35. In this case, the microcontroller's ADC is used to read an analog signal that is proportional (or nearly proportional) to the ambient temperature.
 So, the excited student creates a program to measure the temperature and print the value on an LCD display. In many situations what happens is that the temperature value varies slightly. For example, sometimes it shows 26°C/27°C, and it varies between these two values, which are very close. This can happen for several reasons: the value is close to the resolution limit, noise, poor contact (there are several possible reasons). But the student doesn't want to know the reason, he just wants to solve the problem and make the temperature stop varying, stay stable. And then the student has the idea that solves the problem: take an average of 100 readings and use the average value as the correct temperature value.
@@ -43,7 +47,7 @@ exactly the same thing: it does an average. However, not simply an average equal
 
 Instead of averaging the DC readings, the lock-in averages the AC readings after synchronous detection. This simple change is the differential that causes the noise to be eliminated.
 
-What do you mean "CA read after synchronous detection"?
+* *What do you mean "CA read after synchronous detection"?* *
 
 Think about it, if the lock-in only averaged the sinusoidal signal read from the ADC port, nothing special would be done. Most of the noise that was contaminating the signal would also be present in the result of this AC average. Thus, the lock-in averages only those components that have the same frequency as the reference frequency used to modulate the signal. This causes unwanted components and noise to be eliminated. So it is correct to say that the lock-in also works as a highly selective band-pass filter.
 
