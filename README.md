@@ -107,7 +107,7 @@ Here what happens is basic mathematical operations, such as vector multiplicatio
 
 Before explaining the code, it is necessary to explain where the s(t) and r(t) signals are.
 - The signal s(t) is represented by the vector AdcRead[1280];
-- The r(t) signal is present on line 49 of the 2ndHarmonic.c file present in this repository. Such a signal has the name LUT[Ns]. It was created in excel with the function sin(2*pi()*8*i/128), with i ranging from 0 to 127.
+- The r(t) signal is present on line 49 of the 2ndHarmonic.c file present in this repository. Such a signal has the name LUT[Ns]. It was created in excel with the function sin(2 * pi() * 8 * i/128), with i ranging from 0 to 127.
 
 Our objective in this work is to detect the 2nd harmonic component in the experiment output. So what we need to do is multiply the signal of interest s(t) by a modified version of the reference signal , which I will call rd(t). This rd(t) signal also has 128 points, however, it has twice the frequency of the signal used to generate the signal in the DAC. (Obs: If we wanted the fourth harmonic component, the signal rd(t) would have 4x the frequency of the signal r(t))
 
