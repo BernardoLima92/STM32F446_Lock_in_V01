@@ -193,4 +193,19 @@ mod2h[j] = pow( (pow(fase2h[j],2) + pow(quad2h[j], 2)) , 0.5);	// This is the M 
 ## **WMS Experiment - Comparison between STM32 based lock-in and Signal Revocery DSP7265 lock-in**
 ![nucleof446re - comparisson](https://user-images.githubusercontent.com/114233216/233122503-337d03f3-4aaf-4bfa-ad4e-e22fccc6fee4.png)
 
+Below is a result comparing the same experiment performed with two different lock-in amplifiers. The graph has two curves, one blue and one black.
 
+![stm3232 x dsp7265](https://user-images.githubusercontent.com/114233216/233124070-552254a2-c03f-4c80-8241-e8a8854f3394.png)
+
+
+The blue curve is the result of the lock-in processing obtained with the STM32 in a WMS experiment in which the concentration of 437 ppm of acetylene gas present in a reservoir was analyzed.
+The black curve is the result, for the same experiment, but performed with the Lock-in DSP 7265.
+
+At lower gas concentrations, where greater sensitivity is required, the STM32 signal was not as "clear" as that of the DSP7265, but it is possible to see that there is a great similarity.
+
+![stm3232 x dsp7265 - 54ppm](https://user-images.githubusercontent.com/114233216/233124742-5f41a6a8-de18-49c7-a3c6-1812d0390569.png)
+
+
+Conclusion:
+
+It is possible to create a low cost lock-in amplifier with very high quality.
