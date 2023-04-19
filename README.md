@@ -191,5 +191,6 @@ mod2h[j] = pow( (pow(fase2h[j],2) + pow(quad2h[j], 2)) , 0.5);	// This is the M 
 
 
 ## **WMS Experiment - Comparison between STM32 based lock-in and Signal Revocery DSP7265 lock-in**
+![nucleof446re - comparisson](https://user-images.githubusercontent.com/114233216/233122503-337d03f3-4aaf-4bfa-ad4e-e22fccc6fee4.png)
 
 
